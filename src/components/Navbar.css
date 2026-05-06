@@ -1,0 +1,132 @@
+.navbar {
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(68, 68, 65, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* Remove vertical padding entirely to let logo reach edges */
+  padding: 0; 
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Height increased to make logo significantly bigger */
+  height: 100px; 
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  /* Pulls the logo left to align with the page edge */
+  margin-left: -15px; 
+  height: 100%;
+}
+
+.logo-img {
+  /* Set height to 100% of the container for maximum impact */
+  height: 100%; 
+  width: auto;
+  display: flex;
+  /* Ensures no internal image padding is interfering */
+  object-fit: contain;
+  object-position: left center;
+}
+
+.logo-img:hover {
+  transform: scale(1.02);
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.nav-link {
+  color: var(--charcoal);
+  font-weight: 600;
+  position: relative;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  transition: color var(--transition-normal);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--terracotta);
+  transition: width var(--transition-normal);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--terracotta);
+}
+
+.nav-link:hover::after, 
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-btn {
+  padding: 0.6rem 1.5rem;
+}
+
+.mobile-menu-btn {
+  color: var(--charcoal);
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Mobile Media Queries */
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+  
+  .mobile-only {
+    display: block;
+  }
+
+  .navbar-container {
+    height: 80px; /* Still large on mobile but slightly adjusted */
+  }
+
+  .mobile-menu {
+    display: flex;
+    background-color: var(--white);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    box-shadow: 0 10px 15px rgba(68, 68, 65, 0.05);
+    flex-direction: column;
+    gap: var(--spacing-md);
+    border-top: 1px solid rgba(68, 68, 65, 0.05);
+  }
+
+  .logo-img {
+    height: 100%;
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-only {
+    display: flex;
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+}

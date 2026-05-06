@@ -1,0 +1,326 @@
+/* ─── HERO ─────────────────────────────────────────────── */
+.books-hero {
+  background: linear-gradient(135deg, var(--cream) 60%, var(--cream-dark) 100%);
+  text-align: center;
+}
+
+.books-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--terracotta);
+  margin-bottom: var(--spacing-md);
+}
+
+.books-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  margin-bottom: var(--spacing-lg);
+}
+
+.books-hero-sub {
+  font-size: 1.1rem;
+  color: var(--charcoal-light);
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* ─── BOOK SECTION ──────────────────────────────────────── */
+.book-section {
+  background-color: var(--cream);
+}
+
+.book-reverse {
+  direction: rtl;
+}
+
+.book-reverse > * {
+  direction: ltr;
+}
+
+@media (max-width: 768px) {
+  .book-reverse { direction: ltr; }
+  .order-1 { order: 1; }
+  .order-2 { order: 2; }
+}
+
+/* ─── BOOK COVER ─────────────────────────────────────────── */
+.book-cover-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.book-cover {
+  width: 100%;
+  max-width: 340px;
+  min-height: 440px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: -8px 12px 40px rgba(0,0,0,0.2), inset -4px 0 12px rgba(0,0,0,0.15);
+}
+
+.book-spine {
+  width: 24px;
+  min-height: 100%;
+  background: rgba(0,0,0,0.2);
+  flex-shrink: 0;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+
+.book-cover-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: white;
+}
+
+.book-mom {
+  background: linear-gradient(160deg, #2D3561 0%, #5C6BC0 60%, #3949AB 100%);
+}
+
+.book-daughter {
+  background: linear-gradient(160deg, #1B5E20 0%, #43A047 60%, #2E7D32 100%);
+}
+
+.book-cover-audience {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.book-cover-icon {
+  opacity: 0.7;
+}
+
+.book-cover-title {
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  color: white;
+  line-height: 1.3;
+}
+
+.book-cover-author {
+  font-size: 0.8rem;
+  opacity: 0.75;
+  line-height: 1.5;
+}
+
+.book-tagline {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--charcoal);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ─── BOOK CONTENT ──────────────────────────────────────── */
+.book-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.book-audience-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(216, 90, 48, 0.1);
+  color: var(--terracotta);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: fit-content;
+}
+
+.book-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+.book-author-name {
+  font-size: 0.9rem;
+  color: var(--charcoal-light);
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+}
+
+.book-desc {
+  color: var(--charcoal-light);
+  line-height: 1.8;
+  font-size: 0.97rem;
+}
+
+.book-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid rgba(68,68,65,0.1);
+  border-bottom: 1px solid rgba(68,68,65,0.1);
+  margin: var(--spacing-sm) 0;
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--charcoal-light);
+  margin-bottom: var(--spacing-xs);
+}
+
+.book-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.book-tag {
+  padding: 0.2rem 0.65rem;
+  background-color: var(--cream-dark);
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  color: var(--charcoal);
+}
+
+.book-meta-row {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.book-meta-item {
+  font-size: 0.95rem;
+  color: var(--charcoal);
+}
+
+.book-actions {
+  flex-wrap: wrap;
+}
+
+/* ─── TOGETHER SECTION ───────────────────────────────────── */
+.books-together {
+  background-color: var(--cream-dark);
+}
+
+.books-together-text {
+  font-size: 1.08rem;
+  color: var(--charcoal-light);
+  max-width: 680px;
+  margin: 0 auto var(--spacing-xl);
+  line-height: 1.8;
+}
+
+.books-bundle {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.bundle-books {
+  align-items: center;
+}
+
+.bundle-thumb {
+  width: 130px;
+  height: 170px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  box-shadow: -4px 6px 20px rgba(0,0,0,0.2);
+}
+
+.bundle-plus {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  color: var(--charcoal-light);
+}
+
+.bundle-label {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.bundle-note {
+  font-size: 0.9rem;
+  color: var(--charcoal-light);
+  text-align: center;
+}
+
+/* Add these to your existing Books.css */
+
+.book-real-image-wrapper {
+  width: 100%;
+  max-width: 340px;
+  perspective: 1000px; /* Adds a bit of depth */
+}
+
+.book-real-image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  /* This creates that deep book shadow from your reference image */
+  box-shadow: 
+    -10px 15px 35px rgba(0, 0, 0, 0.25), 
+    -2px 0 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.book-real-image:hover {
+  transform: rotateY(-5deg) translateX(5px);
+}
+
+/* For the bundle section */
+.bundle-thumb-img {
+  width: 130px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: -4px 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Adjustments for the content layout in your screenshot */
+.book-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin-top: var(--spacing-xs);
+}
+
+.book-desc {
+  font-size: 1rem;
+  color: var(--charcoal-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.book-tag {
+  background-color: #F3E5D8; /* Light warm tint for tags */
+  color: var(--charcoal);
+  font-weight: 500;
+}

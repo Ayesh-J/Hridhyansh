@@ -1,0 +1,272 @@
+/* ─── HERO ─────────────────────────────────────────────── */
+.hero-section {
+  padding: var(--spacing-3xl) 0;
+  background: linear-gradient(135deg, var(--cream) 60%, var(--cream-dark) 100%);
+  overflow: hidden;
+}
+
+.hero-container {
+  min-height: 70vh;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.15;
+  color: var(--charcoal);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--charcoal-light);
+  max-width: 480px;
+  line-height: 1.8;
+}
+
+.hero-btn {
+  align-self: flex-start;
+  padding: 0.85rem 2rem;
+  font-size: 1.05rem;
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  box-shadow: 0 20px 60px rgba(216, 90, 48, 0.18);
+}
+
+/* Fallback if image missing */
+.hero-img[src="/hero.png"]::before {
+  content: '';
+}
+
+/* ─── PROBLEM ───────────────────────────────────────────── */
+.problem-section {
+  background-color: var(--cream);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.problem-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  background: var(--white);
+  text-align: left;
+}
+
+.problem-card p {
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+.icon-wrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(216, 90, 48, 0.08);
+  border-radius: var(--radius-md);
+}
+
+/* ─── ABOUT / WHAT IS HRIDHYANSH ────────────────────────── */
+.about-section {
+  background-color: var(--cream-dark);
+}
+
+.about-visual {
+  min-height: 340px;
+  padding: var(--spacing-2xl);
+  background: linear-gradient(135deg, rgba(216, 90, 48, 0.12) 0%, rgba(239, 159, 39, 0.10) 100%);
+}
+
+.about-visual-content {
+  text-align: center;
+}
+
+.about-visual-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.about-desc {
+  font-size: 1.08rem;
+  color: var(--charcoal-light);
+  line-height: 1.8;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.feature-list li {
+  font-size: 1rem;
+  color: var(--charcoal);
+}
+
+/* ─── STORY TEASER ──────────────────────────────────────── */
+.story-section {
+  background: linear-gradient(135deg, var(--terracotta) 0%, var(--terracotta-dark) 100%);
+  color: var(--white);
+}
+
+.story-section .section-title {
+  color: var(--white);
+}
+
+.story-container {
+  max-width: 680px;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-xl);
+}
+
+.story-btn {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.story-btn:hover {
+  background-color: var(--white);
+  color: var(--terracotta);
+}
+
+/* ─── PRODUCTS ──────────────────────────────────────────── */
+.products-section {
+  background-color: var(--white);
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.product-card h3 {
+  font-size: 1.4rem;
+}
+
+.product-card p {
+  color: var(--charcoal-light);
+  line-height: 1.7;
+}
+
+.price {
+  font-size: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--terracotta);
+}
+
+.price-desc {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--charcoal-light);
+  font-family: var(--font-body);
+}
+
+.books-preview {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.book-thumb {
+  flex: 1;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+}
+
+.adult-book {
+  background: linear-gradient(135deg, #2D3561, #5C6BC0);
+  color: white;
+}
+
+.child-book {
+  background: linear-gradient(135deg, #1B5E20, #43A047);
+  color: white;
+}
+
+/* ─── TESTIMONIALS ──────────────────────────────────────── */
+.testimonials-section {
+  background-color: var(--cream);
+}
+
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.quote {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--charcoal);
+  font-style: italic;
+}
+
+.author {
+  font-weight: 600;
+  color: var(--terracotta);
+  font-size: 0.95rem;
+  margin-top: var(--spacing-sm);
+}
+
+.child-quote {
+  font-size: 0.9rem;
+  color: var(--charcoal-light);
+  border-left: 3px solid var(--amber);
+  padding-left: var(--spacing-sm);
+  font-style: italic;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
