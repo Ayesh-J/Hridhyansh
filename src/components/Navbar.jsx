@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react' // Heart removed to avoid unused import
+import { CONTACT } from '../config/contact'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -16,6 +17,9 @@ const Navbar = () => {
   ]
 
   const toggleMenu = () => setIsOpen(!isOpen)
+
+  const enrollLink =
+    `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(CONTACT.messages.enroll)}`
 
   return (
     <nav className="navbar">
@@ -39,9 +43,14 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link to="/programs" className="btn btn-primary nav-btn">
+          <a
+            href={enrollLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary nav-btn"
+          >
             Start for ₹999
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Hamburger Icon */}
@@ -63,13 +72,15 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link
-            to="/programs"
+          <a
+            href={enrollLink}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-primary mobile-nav-btn"
             onClick={() => setIsOpen(false)}
           >
             Start for ₹999
-          </Link>
+          </a>
         </div>
       )}
     </nav>

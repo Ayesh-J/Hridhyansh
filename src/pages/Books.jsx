@@ -1,4 +1,5 @@
 import { ExternalLink, MessageCircle, BookOpen } from 'lucide-react'
+import { CONTACT } from '../config/contact'
 import './Books.css'
 
 const books = [
@@ -7,9 +8,10 @@ const books = [
     title: 'Diary of a Working Mom',
     author: 'Dr Nisha Sawant, Author & Founder of Hridhyansh',
     audience: 'For Parents',
-    image: '/DAIRY.jpeg', // Pointing to your file in the public folder
+    image: '/DAIRY.jpeg', // Pointing to your file in the public folder 
     color: 'book-mom',
     tagline: '"Honest. Raw. Necessary."',
+    buyLink: '',
     description: [
       'A working mother doesn\'t have a villian. She has 24 hours, a hundred responsibilities, and a love so fierce it hurts her when she can\'t give it freely.',
       'Diary of a Working Mom is not a parenting manual. It\'s a journal — honest entries from the in-between moments: the school drop-off where you cry in the car, the bedtime story you read half-asleep, the guilt that follows you into meetings.',
@@ -27,6 +29,7 @@ const books = [
     audience: 'For Children & Their Parents',
     color: 'book-daughter',
     tagline: '"A child\'s love letter to every busy parent."',
+    buyLink: '',
     description: [
       'What if you could be invisible — not to disappear, but to be everywhere your mother needs you at once?',
       'The Ghost Maid is the story of Anika, a girl who wishes she could become a ghost maid — someone who silently takes care of everything so her mother wouldn\'t have to worry anymore.',
@@ -119,14 +122,19 @@ const Books = () => {
 
                 <div className="book-actions flex gap-md">
                   <a
-                    href="https://wa.me/919876543210?text=Hi!%20I%27d%20like%20to%20order%20a%20copy%20of%20your%20book."
+                    href={`https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(CONTACT.messages.orderBook(book.title))}`}
                     target="_blank"
                     rel="noreferrer"
                     className="btn btn-primary"
                   >
                     <MessageCircle size={18} /> Order via WhatsApp
                   </a>
-                  <a href="#" className="btn btn-outline">
+                  <a
+                    href={book.buyLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="btn btn-outline"
+                  >
                     <ExternalLink size={18} /> Buy Online
                   </a>
                 </div>
@@ -146,15 +154,15 @@ const Books = () => {
           </p>
           <div className="books-bundle card">
             <div className="bundle-books flex justify-center gap-lg">
-               {/* Update bundle thumbs to use real image if available */}
-               <img src="/DAIRY.jpeg" alt="Diary thumb" className="bundle-thumb-img" />
+              {/* Update bundle thumbs to use real image if available */}
+              <img src="/DAIRY.jpeg" alt="Diary thumb" className="bundle-thumb-img" />
               <div className="bundle-plus">+</div>
               <div className="bundle-thumb book-daughter">The<br />Ghost Maid</div>
             </div>
             <p className="bundle-label">Both Books Bundle</p>
             <p className="bundle-note">Available exclusively through WhatsApp order or at our Goa events.</p>
             <a
-              href="https://wa.me/919876543210?text=Hi!%20I%27d%20like%20to%20order%20both%20books%20together."
+              href={`https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(CONTACT.messages.orderBundle)}`}
               target="_blank"
               rel="noreferrer"
               className="btn btn-primary"

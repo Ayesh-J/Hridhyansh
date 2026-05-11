@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MessageCircle, Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react'
+import { CONTACT } from '../config/contact'
 import './Contact.css'
 
 const Contact = () => {
@@ -10,11 +11,38 @@ const Contact = () => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-  }
 
+    try {
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbwM7bKCcMRspW2Ti0q8pQy5_1PsRUT6hFJDQwoTR-CR6u2SVErN-1HIZRPbQesi8eIM6A/exec',
+        {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain',
+          },
+          body: JSON.stringify(form),
+        }
+      )
+
+      setSubmitted(true)
+
+      setForm({
+        name: '',
+        childName: '',
+        email: '',
+        phone: '',
+        program: 'BondBuild',
+        message: '',
+      })
+
+    } catch (error) {
+      console.error('Form submission error:', error)
+      alert('Something went wrong. Please try again.')
+    }
+  }
   return (
     <div className="contact-page animate-fade-in">
 
@@ -46,7 +74,13 @@ const Contact = () => {
                   <p>Thank you, <strong>{form.name}</strong>. We'll be in touch within 24 hours.</p>
                   <p className="success-note">
                     In a hurry? WhatsApp us directly at{' '}
-                    <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer">+91 98765 43210</a>.
+                    <a
+                      href={`https://wa.me/${CONTACT.whatsappNumber}`}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      +91 92099 47228
+                    </a>
                   </p>
                 </div>
               ) : (
@@ -140,7 +174,7 @@ const Contact = () => {
 
               <div className="contact-methods">
                 <a
-                  href="https://wa.me/919876543210?text=Hi!%20I%27d%20like%20to%20know%20more%20about%20Hridhyansh."
+                  href={`https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(CONTACT.messages.contact)}`}
                   target="_blank"
                   rel="noreferrer"
                   className="contact-method-card card"
@@ -151,18 +185,18 @@ const Contact = () => {
                   <div className="method-content">
                     <h3>WhatsApp</h3>
                     <p>Chat with us directly. Usually the fastest way to get an answer.</p>
-                    <span className="method-link">+91 98765 43210</span>
+                    <span className="method-link">+91 92099 47228</span>
                   </div>
                 </a>
 
-                <a href="mailto:hello@hridhyansh.in" className="contact-method-card card">
+                <a href="mailto:hellohridhyansh@gmail.com" className="contact-method-card card">
                   <div className="method-icon email-icon">
                     <Mail size={28} />
                   </div>
                   <div className="method-content">
                     <h3>Email</h3>
                     <p>For detailed enquiries, bulk orders, or collaborations.</p>
-                    <span className="method-link">hello@hridhyansh.in</span>
+                    <span className="method-link">hellohridhyansh@gmail.com</span>
                   </div>
                 </a>
 
@@ -183,7 +217,7 @@ const Contact = () => {
                   <div className="method-content">
                     <h3>Call Us</h3>
                     <p>Available Monday–Saturday, 10am–6pm IST.</p>
-                    <span className="method-link">+91 98765 43210</span>
+                    <span className="method-link">+91 92099 47228</span>
                   </div>
                 </div>
               </div>
