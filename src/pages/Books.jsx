@@ -27,6 +27,7 @@ const books = [
     title: 'The Ghost Maid',
     author: 'Shreshtha Sawant, age 9 · Author',
     audience: 'For Children & Their Parents',
+    image: '/ghost_maid_part_1.jpeg',
     color: 'book-daughter',
     tagline: '"A child\'s love letter to every busy parent."',
     buyLink: '',
